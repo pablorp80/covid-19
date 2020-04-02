@@ -1,7 +1,7 @@
 # 2019 Novel Coronavirus COVID-19 (2019-nCoV) Case Progression Prediction
 
 
-This is the source code repository for the Coronavirus Disease 2019 (COVID-19) Data and Deep Learning Predictions by the Pablo Rivas from Marist College's Department of Computer Science using data from Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE). 
+This is the source code repository for the Coronavirus Disease 2019 (COVID-19) Data and Deep Learning Predictions by Pablo Rivas from Marist College's Department of Computer Science using data from Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE). 
 
 <br>
 
