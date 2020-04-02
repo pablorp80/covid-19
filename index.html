@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en-us">
+
+  <head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>COVID-19 | Predictions Dashboard</title>
+    <meta name="description" content="">
+
+    <!-- The main CSS file -->
+    <link rel="stylesheet" href="css/productionb.css">
+
+    <!-- d3 style -->
+    <style>
+      body { font: 12px Arial;}
+
+      path { 
+        stroke: steelblue;
+        stroke-width: 2;
+        fill: none;
+      }      
+        
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: grey;
+        stroke-width: 1;
+        shape-rendering: crispEdges;
+      }
+
+      .brush .extent {
+        stroke: #fff;
+        fill-opacity: .125;
+        shape-rendering: crispEdges;
+      }     
+      .loader {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255,255,255,0.8);
+        text-align: center;
+        z-index: 99;
+        display: none;
+      }
+      .loader p {
+        margin-top: 180px;
+      }
+    </style>
+
+    <!-- Web fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
+
+    <!-- favicon.ico. Place these in the root directory. -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+  </head>
+
+  <body class="has-animations">
+
+
+  <!-- Create outer border -->
+  <div class="page-border">
+  <div class="bg--white">
+
+    <!-- Header -->
+    <header class="align--center pt3 pb2">
+      <div class="container">
+        <h1 class="mb3 reveal-on-scroll is-revealing" title="COVID-19">Coronavirus
+          Disease 2019 (COVID-19)</h1>
+        <h2 class="mb3 reveal-on-scroll is-revealing">Data and Deep Learning Predictions</h2>
+        <p class="mb1">Last Update: Apr 2, 2020</p>
+        <p>Poughkeepsie, New York</p>
+      </div>
+    </header>
+
+    <!-- Body -->
+    <main>
+      <div class="container">
+
+        <!-- Info -->
+        <section class="pt2 pb3 align--center">          
+          <script src="./py/covid19_data.js"></script>
+          <h3 class="mb1">Latest Data of Comfirmed Cases</h3>
+          <h4 class="mb1">[Data Source: 
+            <a href="https://github.com/CSSEGISandData/COVID-19">John
+            Hopkins</a> and 
+            <a href="https://github.com/nytimes/covid-19-data">NY
+            Times</a>]</h4>
+
+          <div id="container" style="min-width: 300px;width:100%">
+          <div class="loader"><p>Working...</p></div>
+          </div>
+          <h3 class="mb1">LSTM and SVR predictions</h3>
+          <h4 class="mb1">[Google Colab 
+            <a href="https://colab.research.google.com/drive/1uXcDK6YdRj6hbLALXUyWPpcSxSG28UyN">
+            Available Here</a>]</h4>
+          <div class="grid-row">
+            <div class="grid-column span-one-third mt1 reveal-on-scroll is-revealing">
+              <p> <img class="icon mb1" src="./img/us.png"> | 
+              United States </p>
+              <a href="./py/us-lstm.png"><img
+                 src="./py/us-lstm.png"></a>
+              <a href="./py/us-svr.png"><img
+                 src="./py/us-svr.png"></a>
+            </div>
+            <div class="grid-column span-one-third mt1 reveal-on-scroll is-revealing">
+              <p> <img class="icon mb1" src="./img/nys.png"> |
+              New York State 
+              <a href="./py/nys-lstm.png"><img
+                 src="./py/nys-lstm.png"></a>
+              <a href="./py/nys-svr.png"><img
+                 src="./py/nys-svr.png"></a>
+            </div>
+            <div class="grid-column span-one-third mt1 reveal-on-scroll is-revealing">
+              <p> <img class="icon mb1" src="./img/dc.png"> |
+              Dutchess Cty 
+              <a href="./py/dutchess-lstm.png"><img
+                 src="./py/dutchess-lstm.png"></a>
+              <a href="./py/dutchess-svr.png"><img
+                 src="./py/dutchess-svr.png"></a>
+            </div>
+          </div>
+           
+        </section>
+
+        <!-- Presenters -->
+        <section class="pt3 pb3 align--center">
+          <h3 class="mb1">Individual plots</h3>
+          <div class="grid-row">
+            <div class="grid-column span-2 mt2">
+              <a href="./py/us-lstm.png"><img class="mb1" src="./py/us-lstm.png" alt="U.S. | LSTM">
+              </a><p class="small">U.S. | LSTM</p>
+            </div>
+            <div class="grid-column span-2 mt2">
+              <a href="./py/us-svr.png"><img class="mb1" src="./py/us-svr.png" alt="U.S. | SVR">
+              </a><p class="small">U.S. | SVR</p>
+            </div>
+            <div class="grid-column span-2 mt2">
+              <a href="./py/nys-lstm.png"><img class="mb1" src="./py/nys-lstm.png" alt="N.Y.S. | LSTM">
+              </a><p class="small">N.Y.S. | LSTM</p>
+            </div>
+            <div class="grid-column span-2 mt2">
+              <a href="./py/nys-svr.png"><img class="mb1" src="./py/nys-svr.png" alt="N.Y.S. | SVR">
+              </a><p class="small">N.Y.S. | SVR</p>
+            </div>
+            <div class="grid-column span-2 mt2">
+              <a href="./py/dutchess-lstm.png"><img class="mb1" src="./py/dutchess-lstm.png" alt="D.C. | LSTM">
+              </a><p class="small">D.C. | LSTM</p>
+            </div>
+            <div class="grid-column span-2 mt2">
+              <a href="./py/dutchess-svr.png"><img class="mb1" src="./py/dutchess-svr.png" alt="D.C. | SVR">
+              </a><p class="small">D.C. | SVR</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Facts -->
+        <section class="pt2 pb3">
+          <h3 class="align--center mb2">Disclaimers and facts</h3>
+          <div class="grid-row">
+            <div class="grid-column span-one-third mt1">
+              <blockquote class="blockquote">
+                <p>This predictions are entirely based on available data about progression of known cases around the world. This means that the predictions offerred here are based on how cases have progressed around the world. If there are unique cases that have never been seen before, the model will offer a high degree of uncertainty.</p>
+                <p>> <cite>Disclaimer</cite></p>
+              </blockquote>
+            </div>
+            <div class="grid-column span-one-third mt1">
+              <blockquote class="blockquote">
+                <p>The support vector machine for regression (SVR) is trained over the number of cases in proportion to the population of the region in consideration using available census data. Before training, the dataset is z-scored to improve performance.</p>
+                <p>> <cite>Fact</cite></p>
+              </blockquote>
+            </div>
+            <div class="grid-column span-one-third mt1">
+              <blockquote class="blockquote">
+                <p>The long-short term memory (LSTM)-based model, as opposed to the SVR, uses data that is not z-scored; however, it does have a batch-normalization layer after the input layer. A small number of units has proven to be enough to give good predictions.</p>
+                <p>> <cite>Fact</cite></p>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="align--center pt3 pb3">
+          <p class="h3 mb2 reveal-on-scroll is-revealing">Want to help?</p>
+          <a href="https://github.com/pablorp80/covid-19" class="btn btn--outline reveal-on-scroll is-revealing">See this on Github</a>
+          <a href="https://give.cdcfoundation.org/give/195963/#!/donation/checkout" class="btn btn--default
+            reveal-on-scroll is-revealing">Donate to the CDC →</a>
+        </section>
+
+        <!-- Git -->
+        <section class="pt3 pb3 align--center">
+          <h3 class="mb2">Github project</h3>
+          <a class="github-button" href="https://github.com/pablorp80/covid-19/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download pablorp80/covid-19 on GitHub">Download</a>
+          <a class="github-button" href="https://github.com/pablorp80/covid-19/fork" data-icon="octicon-repo-forked" aria-label="Fork pablorp80/covid-19 on GitHub">Fork</a>
+          <a class="github-button" href="https://github.com/pablorp80/covid-19/subscription" data-icon="octicon-eye" aria-label="Watch pablorp80/covid-19 on GitHub">Watch</a>
+          <a class="github-button" href="https://github.com/pablorp80/covid-19" data-icon="octicon-star" aria-label="Star pablorp80/covid-19 on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/pablorp80" aria-label="Follow @pablorp80 on GitHub">Follow @pablorp80</a>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt2 pb3 align--center">
+      <ul class="no-bullets list--inline mb0">
+        <li class="m1 block-on-mobile"><a href="https://www.twitter.com/pablorp80" class="link"><img class="icon" src="./img/twitter.svg" alt="pablorp80"> pablorp80</a></li>
+        <li class="m1 block-on-mobile"><a href="https://www.facebook.com/dr.pablo.rivas" class="link"><img class="icon" src="./img/facebook.svg" alt="dr.pablo.rivas"> dr.pablo.rivas</a></li>
+        <li class="m1 block-on-mobile"><a href="https://www.rivas.ai" class="link"><img class="icon" src="./img/web.png" alt="rivas.ai"> rivas.ai</a></li>
+        <li class="m1 block-on-mobile"><a href="https://www.linkedin.com/in/docrivas" class="link"><img class="icon" src="./img/in.png" alt="docrivas"> docrivas</a></li>
+      </ul>
+      <p class="mt1 small text--gray">This page design was inspired by project <a href="https://www.papayatemplates.com" class="link">Papaya</a>.</p>
+    </footer>
+
+  </div>
+  </div>
+
+  <!-- Scroll reveal -->
+  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.9/require.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.3.3/d3.min.js"></script>
+
+  <!-- d3 script -->
+  <script type="text/javascript">
+    'use strict';
+    $(function () {
+      requirejs.config({
+        "baseUrl": "./js/",
+        "paths": {
+          "app": "./js/",
+          'moment': 'http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.1/moment.min',
+          'underscore': 'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min'          
+        }
+      });
+
+      require(['d3.chart'], function (d3Chart) {
+        d3Chart.init({ container: '#container', xDim: 'DateTime' });
+        d3Chart.addGraph({ id: 'USA', type: 'analog', name: 'USA', dataId: 513, yVal: ['Value'], data: USA });
+        d3Chart.addGraph({ id: 'NY', type: 'analog', name: 'NY', dataId: 513, yVal: ['Value'], data: NY });
+        d3Chart.addGraph({ id: 'Dutchess', type: 'analog', name: 'Dutchess', dataId: 513, yVal: ['Value'], data: Dutchess });
+        d3Chart.render();                
+
+        //setTimeout(function () {  
+        //  d3Chart.reorderGraph('Dutchess', 'up');
+        //  
+        //  window.setTimeout(function () {
+        //    d3Chart.removeGraph('USA');
+        //  }, 2000);
+        //  
+        //}, 3000);
+      });
+    });
+  </script>
+
+  <!-- The main JavaScript file -->
+  <script src="js/production.js"></script>
+
+  <!-- github script  -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  </body>
+</html>
+
