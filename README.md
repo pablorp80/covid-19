@@ -17,6 +17,10 @@ https://colab.research.google.com/drive/1uXcDK6YdRj6hbLALXUyWPpcSxSG28UyN
 * Coronavirus (Covid-19) Data in the United States: <br>
  https://github.com/nytimes/covid-19-data <br>
 
+<b>D3 Visualization:</b><br>
+* Time series chart with shared x-axis and zoom: <br>
+ http://bl.ocks.org/marufbd/7191340
+
 <br>
 <b>Disclaimer:</b><br>
 This project offers predictions of case progressions using simple deep learning techniques that learn from data. It only uses the data reported above with its known limitations.
