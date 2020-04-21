@@ -23,7 +23,7 @@ https://colab.research.google.com/drive/1uXcDK6YdRj6hbLALXUyWPpcSxSG28UyN
 
 <br>
 <b>Disclaimer:</b><br>
-This project offers predictions of case progressions using simple deep learning techniques that learn from data. It only uses the data reported above with its known limitations.
+This project offers predictions of case progressions using simple deep learning techniques that learn from data. It only uses the data reported above with its known limitations. This project is not meant to be authoritative but a teaching tool to inspire students to investigate, motivate students to verify data, and ask the right data science questions. The aim is to form students that can create and design tools for their own regions and for everyone.
 <br><br>
 
 <b>Contact: </b><br>
